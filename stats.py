@@ -15,3 +15,14 @@ def count_characters(book_text):
         else:
             letters[letter] = 1
     return letters
+
+def sort_on(items):
+    return items["num"]
+
+def sort_characters(letters):
+    sorted_list = []
+    for letter in letters:
+        char_pair = {"char": letter, "num": letters[letter]}
+        sorted_list.append(char_pair)
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
